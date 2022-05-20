@@ -19,23 +19,7 @@ let apiProductApi = new TempApi.ProductApi();import TempApi from '../src/index';
           }
         });
       }
-    apiProductApi.deleteproduct( productId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{ 
-      let transitionId = window.location.href.split('/').at(-1);
-      let parentId = "";
-      const storedData = window.localStorage.getItem("data");
-      const newMap = new Map(JSON.parse(storedData));
-      newMap.forEach((value, key) => {
-        if (
-          document
-            .getElementById(key)
-            .contains(document.getElementById("i16wk")) === true &&
-            document.getElementById(key).contains(document.getElementById(parentId)) === false
-        ) {
-          transitionId = value._id;
-          parentId = key;
-        }
-      });
-     location.href= '/Dashboard/' + transitionId;}}});};document.getElementById('iarr9q').onclick = (event) => {
+    apiProductApi.deleteproduct( productId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/Dashboard' ;}}});};document.getElementById('iarr9q').onclick = (event) => {
     event.preventDefault();
     let productId = window.location.pathname.replace('/Dashboard/','');
       if(productId === '/Dashboard' || productId === ''){
